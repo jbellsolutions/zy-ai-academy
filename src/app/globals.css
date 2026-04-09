@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-teal: #0D7C66;
+  --color-teal-dark: #0a6352;
+  --color-orange: #E8651A;
+  --color-orange-dark: #d05a15;
+  --color-dark: #1A1A2E;
+  --color-light: #F7F9FB;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
