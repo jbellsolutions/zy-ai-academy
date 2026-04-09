@@ -121,7 +121,7 @@ function WhyNow() {
             <h3 className="mb-2 text-xl font-bold text-teal">The Zy Way</h3>
             <ul className="space-y-2 text-gray-700">
               <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> 1-on-1 AI tutor that adapts to YOUR child</li>
-              <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> Learn by building real projects (Minecraft mods)</li>
+              <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> Learn by doing, not memorizing</li>
               <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> 20 min/day &mdash; fits any schedule</li>
               <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> Parent dashboard with daily progress tracking</li>
             </ul>
@@ -225,12 +225,12 @@ const features = [
     ],
   },
   {
-    icon: "\u26CF\uFE0F",
-    title: "Minecraft Mod Curriculum",
+    icon: "\uD83D\uDCDA",
+    title: "Complete Learning Library",
     items: [
-      "5 guided Java mod projects",
-      "AI prompt starters for each module",
-      "Step-by-step build guides",
+      "Daily habit templates & scheduling tools",
+      "Homework help prompts for any subject",
+      "\"Explain it like I\u2019m 5\" mode for tough topics",
     ],
   },
   {
@@ -248,7 +248,7 @@ const features = [
     items: [
       "Lifetime access to all future updates",
       "Private community access",
-      "Early certification program access",
+      "FREE Safe Vibe Coding for Kids (Minecraft!)",
     ],
   },
 ];
@@ -344,9 +344,9 @@ const tiers = [
     badge: null as string | null,
     features: [
       "AI tutors (math + reading)",
-      "1 Minecraft mod project",
       "Parent dashboard",
       "Daily habit template",
+      "Homework help prompts",
       "Standard support",
     ],
   },
@@ -358,7 +358,7 @@ const tiers = [
     highlight: true,
     features: [
       "Everything in Starter",
-      "All 5 Minecraft mods (lifetime)",
+      "FREE Vibe Coding for Kids bonus",
       "Free future updates forever",
       "Private community access",
       "Early certification access",
@@ -374,7 +374,7 @@ const tiers = [
       "Everything in Founding Family",
       "Done-for-you setup",
       "30-min onboarding call",
-      "Custom mod project",
+      "Custom tutor configuration",
       "90-day priority support",
     ],
   },
@@ -441,11 +441,70 @@ function Pricing() {
   );
 }
 
+/* ───────────────────── FREE BONUS: VIBE CODING ───────────────────── */
+function VibeCodingBonus() {
+  return (
+    <section className="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460] px-4 py-20 text-white">
+      <div className="mx-auto max-w-4xl text-center">
+        <span className="mb-4 inline-block rounded-full bg-teal/20 px-4 py-1 text-sm font-semibold text-teal">
+          FREE Bonus for Founding Families
+        </span>
+        <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
+          Safe Vibe Coding for Kids
+        </h2>
+        <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-300">
+          Learn to code by building Minecraft mods together. Your child gets
+          access to a kid-friendly coding team trained to help them create
+          real mods &mdash; custom swords, new creatures, entire worlds &mdash;
+          while learning real programming skills.
+        </p>
+        <div className="mb-10 grid gap-6 sm:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div className="mb-3 text-4xl">{"\u26CF\uFE0F"}</div>
+            <h3 className="mb-2 font-bold">Build Real Mods</h3>
+            <p className="text-sm text-gray-300">
+              Your child designs and builds actual Minecraft Java mods with
+              AI-assisted coding guidance.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div className="mb-3 text-4xl">{"\uD83D\uDEE1\uFE0F"}</div>
+            <h3 className="mb-2 font-bold">Safe &amp; Supervised</h3>
+            <p className="text-sm text-gray-300">
+              A kid-trained coding team guides every session. No unsupervised
+              AI interactions &mdash; everything is designed for children.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div className="mb-3 text-4xl">{"\uD83C\uDFAE"}</div>
+            <h3 className="mb-2 font-bold">Play What They Build</h3>
+            <p className="text-sm text-gray-300">
+              The best part? They test every mod in Minecraft. Coding stops
+              feeling like homework and starts feeling like a game.
+            </p>
+          </div>
+        </div>
+        <div className="rounded-2xl border-2 border-teal bg-teal/10 p-6">
+          <p className="text-lg font-semibold">
+            Included FREE with every Founding Family membership &mdash; a $197 value.
+          </p>
+          <a
+            href="#join"
+            className="mt-4 inline-block rounded-xl bg-orange px-8 py-3 font-bold transition hover:bg-orange-dark"
+          >
+            Get Founding Family Access &mdash; $47
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ───────────────────── FAQ ───────────────────── */
 const faqs = [
   {
     q: "What ages is this for?",
-    a: "Zy AI Academy works best for kids ages 5\u201314. The AI tutors adapt to any grade level, and the Minecraft mods are designed for beginners.",
+    a: "Zy AI Academy works best for kids ages 5\u201314. The AI tutors adapt to any grade level automatically.",
   },
   {
     q: "Is it hard to set up?",
@@ -453,7 +512,7 @@ const faqs = [
   },
   {
     q: "What do I need?",
-    a: "A computer or tablet, a ChatGPT account (free tier works), and Minecraft Java Edition for the coding projects.",
+    a: "A computer or tablet and a ChatGPT account (free tier works). That\u2019s it. For the bonus Vibe Coding program, you\u2019ll also want Minecraft Java Edition.",
   },
   {
     q: "Does ChatGPT cost extra?",
@@ -634,6 +693,7 @@ export default function Home() {
       <WhatYouGet />
       <HowItWorks />
       <Pricing />
+      <VibeCodingBonus />
       <FAQ />
       <FinalCTA />
       <BecomeTutor />
