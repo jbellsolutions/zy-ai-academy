@@ -24,6 +24,7 @@ function Nav() {
           <a href="#how" className="hover:text-orange transition">How It Works</a>
           <a href="#pricing" className="hover:text-orange transition">Pricing</a>
           <a href="#faq" className="hover:text-orange transition">FAQ</a>
+          <a href="#tutor" className="hover:text-teal transition">Become a Tutor</a>
           <a
             href="#join"
             className="rounded-lg bg-orange px-5 py-2 text-center font-semibold transition hover:bg-orange-dark"
@@ -45,13 +46,13 @@ function Hero() {
           Early Access &mdash; Founding Family Pricing
         </span>
         <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl">
-          Your Child Learns More in{" "}
-          <span className="text-teal">20 Minutes</span> with AI Than an Hour of
-          Homework
+          School Was Built for Factories.{" "}
+          <span className="text-teal">Your Kid Deserves Better.</span>
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-300">
-          A done-for-you AI tutor system and Minecraft coding curriculum that
-          turns screen time into the smartest 20 minutes of your child&apos;s day.
+          A done-for-you AI tutor system that gives your child personalized 1-on-1
+          learning in 20 minutes a day &mdash; built for busy parents, homeschoolers,
+          and families who refuse to settle for an outdated system.
         </p>
 
         {/* Stat boxes */}
@@ -91,43 +92,83 @@ function Hero() {
   );
 }
 
-/* ───────────────────── PROBLEM ───────────────────── */
-const problems = [
+/* ───────────────────── WHY NOW ───────────────────── */
+function WhyNow() {
+  return (
+    <section className="bg-light px-4 py-20">
+      <div className="mx-auto max-w-5xl">
+        <h2 className="mb-4 text-center text-3xl font-extrabold md:text-4xl">
+          The Education System Is 150 Years Behind
+        </h2>
+        <p className="mx-auto mb-12 max-w-3xl text-center text-lg text-gray-600">
+          Classrooms were designed in the 1800s to produce factory workers &mdash;
+          sit still, follow instructions, memorize, repeat. That model has barely
+          changed. But the world your child is growing up in looks nothing like a factory.
+        </p>
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="mb-3 text-4xl">&#x1F3ED;</div>
+            <h3 className="mb-2 text-xl font-bold text-gray-800">The Old Way</h3>
+            <ul className="space-y-2 text-gray-600">
+              <li className="flex items-start gap-2"><span className="text-red-500 font-bold mt-0.5">&#10005;</span> One teacher, 30 kids, same pace for everyone</li>
+              <li className="flex items-start gap-2"><span className="text-red-500 font-bold mt-0.5">&#10005;</span> Memorize-and-test, forget everything after</li>
+              <li className="flex items-start gap-2"><span className="text-red-500 font-bold mt-0.5">&#10005;</span> Creativity gets graded out of kids</li>
+              <li className="flex items-start gap-2"><span className="text-red-500 font-bold mt-0.5">&#10005;</span> Parents have zero visibility into daily learning</li>
+            </ul>
+          </div>
+          <div className="rounded-2xl border-2 border-teal bg-teal/5 p-8 shadow-sm">
+            <div className="mb-3 text-4xl">&#x1F680;</div>
+            <h3 className="mb-2 text-xl font-bold text-teal">The Zy Way</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> 1-on-1 AI tutor that adapts to YOUR child</li>
+              <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> Learn by building real projects (Minecraft mods)</li>
+              <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> 20 min/day &mdash; fits any schedule</li>
+              <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> Parent dashboard with daily progress tracking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────────────── WHO IT'S FOR ───────────────────── */
+const personas = [
+  {
+    icon: "\u23F0",
+    title: "Busy Professionals",
+    desc: "You work 50+ hours a week and can\u2019t sit down for homework every night. Zy gives your child a dedicated AI tutor that\u2019s ready when they are \u2014 before school, after dinner, weekends.",
+  },
+  {
+    icon: "\uD83C\uDFE0",
+    title: "Homeschool Families",
+    desc: "You already know one-size-fits-all doesn\u2019t work. Add AI-powered math, reading, and coding to your curriculum in 10 minutes. It adapts to your child\u2019s level automatically.",
+  },
+  {
+    icon: "\uD83C\uDF1F",
+    title: "Parents Who Want More",
+    desc: "School teaches the minimum. You want your child solving problems, coding, and thinking critically. Zy goes beyond worksheets and into real-world skills.",
+  },
   {
     icon: "\uD83D\uDCB8",
-    title: "Tutoring Costs $60\u2013$120/hr",
-    desc: "Private tutors are expensive and hard to schedule. AI tutoring gives your child 1-on-1 attention for a fraction of the cost.",
-  },
-  {
-    icon: "\uD83D\uDE24",
-    title: "Nightly Homework Battles",
-    desc: "Stop fighting over homework. An AI tutor is endlessly patient, always available, and adapts to your child\u2019s pace.",
-  },
-  {
-    icon: "\uD83C\uDFAE",
-    title: "Screens Compete for Attention",
-    desc: "If you can\u2019t beat the screen, join it. Minecraft coding turns gaming time into real learning.",
-  },
-  {
-    icon: "\uD83E\uDD16",
-    title: "The AI Gap Is Growing",
-    desc: "Kids who learn AI now will have a massive advantage. Don\u2019t let your child fall behind.",
+    title: "Families Tired of $100/hr Tutors",
+    desc: "Private tutoring is a luxury. AI tutoring is better \u2014 infinitely patient, always available, and a fraction of the cost. Pay once, use forever.",
   },
 ];
 
-function Problem() {
+function WhoItsFor() {
   return (
-    <section className="bg-light px-4 py-20">
+    <section className="px-4 py-20">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-4 text-center text-3xl font-extrabold md:text-4xl">
-          Sound Familiar?
+          Built for Families Like Yours
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-          Most parents face the same struggles. Zy AI Academy was built to solve
-          them.
+          Whether you homeschool, supplement, or just want your kid ahead of the
+          curve &mdash; this system meets you where you are.
         </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {problems.map((p) => (
+          {personas.map((p) => (
             <div
               key={p.title}
               className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
@@ -484,6 +525,85 @@ function FinalCTA() {
   );
 }
 
+/* ───────────────────── BECOME A TUTOR ───────────────────── */
+function BecomeTutor() {
+  return (
+    <section id="tutor" className="bg-light px-4 py-20">
+      <div className="mx-auto max-w-3xl text-center">
+        <span className="mb-4 inline-block rounded-full bg-teal/20 px-4 py-1 text-sm font-semibold text-teal">
+          Now Recruiting
+        </span>
+        <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
+          Become an AI Tutor Helper
+        </h2>
+        <p className="mx-auto mb-8 max-w-xl text-gray-600">
+          Love teaching? Know your way around AI? We&apos;re building a network of
+          AI-powered tutors who help families get the most out of the Zy system.
+          Flexible hours, remote work, and you&apos;ll be at the forefront of
+          education&apos;s biggest shift.
+        </p>
+        <div className="mb-8 grid gap-4 text-left sm:grid-cols-3">
+          {[
+            { icon: "\uD83D\uDCBB", title: "100% Remote", desc: "Work from anywhere on your schedule" },
+            { icon: "\uD83D\uDCB0", title: "Earn $25\u2013$50/hr", desc: "Competitive pay, growing demand" },
+            { icon: "\uD83C\uDF31", title: "Make an Impact", desc: "Help kids learn skills school doesn\u2019t teach" },
+          ].map((b) => (
+            <div key={b.title} className="rounded-xl border border-gray-200 bg-white p-5 text-center shadow-sm">
+              <div className="mb-2 text-3xl">{b.icon}</div>
+              <h3 className="font-bold">{b.title}</h3>
+              <p className="mt-1 text-sm text-gray-600">{b.desc}</p>
+            </div>
+          ))}
+        </div>
+        <form
+          action="https://formspree.io/f/placeholder"
+          method="POST"
+          className="mx-auto max-w-md space-y-4"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30"
+          />
+          <select
+            name="experience"
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-700 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30"
+          >
+            <option value="">Your experience with AI</option>
+            <option value="beginner">Beginner &mdash; I use ChatGPT sometimes</option>
+            <option value="intermediate">Intermediate &mdash; I build with AI tools regularly</option>
+            <option value="advanced">Advanced &mdash; I develop AI systems / teach AI</option>
+          </select>
+          <textarea
+            name="message"
+            placeholder="Why do you want to be an AI tutor? (optional)"
+            rows={3}
+            className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/30"
+          />
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-teal py-3 font-semibold text-white transition hover:bg-teal/90"
+          >
+            Apply to Be a Tutor
+          </button>
+          <p className="text-xs text-gray-500">
+            We&apos;ll review your application and get back within 48 hours.
+          </p>
+        </form>
+      </div>
+    </section>
+  );
+}
+
 /* ───────────────────── FOOTER ───────────────────── */
 function Footer() {
   return (
@@ -508,13 +628,15 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
-      <Problem />
+      <WhyNow />
+      <WhoItsFor />
       <ProofStrip />
       <WhatYouGet />
       <HowItWorks />
       <Pricing />
       <FAQ />
       <FinalCTA />
+      <BecomeTutor />
       <Footer />
     </>
   );
