@@ -187,26 +187,77 @@ function WhoItsFor() {
 /* ───────────────────── PROOF STRIP ───────────────────── */
 function ProofStrip() {
   return (
-    <section className="bg-teal px-4 py-16 text-center text-white">
-      <div className="mx-auto max-w-4xl">
-        <h2 className="mb-3 text-3xl font-extrabold md:text-4xl">
-          This System Wasn&apos;t Built in a Lab
-        </h2>
-        <p className="mb-10 text-lg opacity-80">
-          It was built by a dad for his 5-year-old son, Zy. Here&apos;s what happened.
-        </p>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-          {[
-            { num: "40+", label: "Daily math questions completed" },
-            { num: "3rd+", label: "Grade-level math at age 5" },
-            { num: "9\u201310yr", label: "Communication level" },
-            { num: "Daily", label: "Learning habit formed" },
-          ].map((s) => (
-            <div key={s.label}>
-              <div className="text-3xl font-extrabold md:text-4xl">{s.num}</div>
-              <div className="mt-1 text-sm opacity-80">{s.label}</div>
+    <section className="bg-teal px-4 py-16 text-white">
+      <div className="mx-auto max-w-5xl">
+        {/* Intro */}
+        <div className="mb-12 text-center">
+          <h2 className="mb-3 text-3xl font-extrabold md:text-4xl">
+            This System Wasn&apos;t Built in a Lab
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg opacity-80">
+            It was built by a dad for his 5-year-old son, Zy. No focus groups.
+            No beta testers. Just a kid, a tablet, and an AI tutor. Here&apos;s
+            what a real session looks like.
+          </p>
+        </div>
+
+        {/* Video + Stats side by side */}
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          {/* Video */}
+          <div className="flex justify-center">
+            <div className="relative w-full max-w-[320px] overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white/20">
+              <video
+                className="w-full"
+                poster="/zy-proof-thumb.jpg"
+                controls
+                preload="metadata"
+                playsInline
+              >
+                <source src="/zy-proof-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold backdrop-blur">
+                Real session &bull; Unscripted
+              </div>
             </div>
-          ))}
+          </div>
+
+          {/* Stats + context */}
+          <div className="text-center md:text-left">
+            <h3 className="mb-6 text-2xl font-bold">
+              This is what 20 minutes a day looks like.
+            </h3>
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { num: "40+", label: "Daily math questions completed" },
+                { num: "3rd+", label: "Grade-level math at age 5" },
+                { num: "9\u201310yr", label: "Communication level" },
+                { num: "Daily", label: "Learning habit formed" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <div className="text-3xl font-extrabold">{s.num}</div>
+                  <div className="mt-1 text-sm opacity-80">{s.label}</div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-sm opacity-70">
+              Zy does this every morning before breakfast. No bribing. No
+              fighting. He asks to do it.
+            </p>
+          </div>
+        </div>
+
+        {/* Outro */}
+        <div className="mt-12 text-center">
+          <p className="mx-auto max-w-xl text-lg font-medium opacity-90">
+            We built this for our family first. Now we&apos;re sharing it with yours.
+          </p>
+          <a
+            href="#join"
+            className="mt-6 inline-block rounded-xl bg-orange px-8 py-3 font-bold text-white transition hover:bg-orange-dark"
+          >
+            Join the Founding Families
+          </a>
         </div>
       </div>
     </section>
