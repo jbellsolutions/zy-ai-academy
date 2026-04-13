@@ -111,7 +111,7 @@ function Hero() {
             </h1>
             <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-300 md:mx-0">
               A done-for-you AI tutor system that gives your child personalized 1-on-1
-              learning in 20 minutes a day &mdash; built for busy parents, homeschoolers,
+              learning in 1 hour a day &mdash; built for busy parents, homeschoolers,
               and families who refuse to settle for an outdated system.
             </p>
 
@@ -120,7 +120,7 @@ function Hero() {
               {[
                 { num: "40+", label: "Math problems solved daily" },
                 { num: "3rd Grade", label: "Math level at age 5" },
-                { num: "20 min", label: "Per day is all it takes" },
+                { num: "1 hour", label: "Per day is all it takes" },
               ].map((s) => (
                 <div
                   key={s.label}
@@ -203,7 +203,7 @@ function WhyNow() {
             <ul className="space-y-2 text-gray-700">
               <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> 1-on-1 AI tutor that adapts to YOUR child</li>
               <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> Learn by doing, not memorizing</li>
-              <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> 20 min/day &mdash; fits any schedule</li>
+              <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> 1 hour/day &mdash; fits any schedule</li>
               <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> Parent dashboard with daily progress tracking</li>
             </ul>
             <div className="mt-5 overflow-hidden rounded-xl">
@@ -329,7 +329,7 @@ function ProofStrip() {
         {/* Stats */}
         <div className="mb-10">
           <h3 className="mb-6 text-center text-2xl font-bold">
-            This is what 20 minutes a day looks like.
+            This is what 1 hour a day looks like.
           </h3>
           <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
             {[
@@ -381,7 +381,7 @@ function WatchRealSession() {
           <p className="mx-auto max-w-2xl text-lg text-gray-300">
             No scripts. No editing. Just Zy, his tablet, and his AI tutor.
             Press play and hear a real session &mdash; this is exactly what your
-            child&apos;s daily 20 minutes sounds like.
+            child&apos;s daily hour sounds like.
           </p>
         </div>
 
@@ -406,7 +406,7 @@ function WatchRealSession() {
           </div>
           <div className="text-center md:text-left">
             <h3 className="mb-3 text-xl font-bold">
-              A tablet, a snack, and 20 minutes.
+              A tablet, a snack, and an hour.
             </h3>
             <p className="mb-4 text-gray-300">
               That&apos;s the whole setup. No fancy equipment. No classroom.
@@ -522,7 +522,7 @@ function WhatYouGet() {
 const steps = [
   { num: 1, title: "Build Your Child\u2019s Profile", desc: "Enter their name, age, grade, and learning goals." },
   { num: 2, title: "Install the AI Tutors", desc: "Copy our pre-built prompts into ChatGPT. Takes 5 minutes." },
-  { num: 3, title: "Set the Daily Habit", desc: "Pick a 20-minute time slot that works for your family." },
+  { num: 3, title: "Set the Daily Habit", desc: "Pick a 1-hour time slot that works for your family." },
   { num: 4, title: "Your Child Starts Learning", desc: "They open ChatGPT, the tutor greets them by name, and the session begins." },
   { num: 5, title: "You Get Weekly Updates", desc: "Auto-generated progress emails so you always know how they\u2019re doing." },
 ];
