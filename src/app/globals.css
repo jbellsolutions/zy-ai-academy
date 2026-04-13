@@ -12,3 +12,12 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif;
 }
+
+/* Hide scrollbar on carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

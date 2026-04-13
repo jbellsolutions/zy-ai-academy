@@ -40,53 +40,77 @@ function Nav() {
 /* ───────────────────── HERO ───────────────────── */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-dark via-[#16213E] to-dark px-4 py-20 text-center text-white md:py-28">
-      <div className="mx-auto max-w-4xl">
-        <span className="mb-4 inline-block rounded-full bg-orange/20 px-4 py-1 text-sm font-semibold text-orange">
-          Early Access &mdash; Founding Family Pricing
-        </span>
-        <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl">
-          School Was Built for Factories.{" "}
-          <span className="text-teal">Your Kid Deserves Better.</span>
-        </h1>
-        <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-300">
-          A done-for-you AI tutor system that gives your child personalized 1-on-1
-          learning in 20 minutes a day &mdash; built for busy parents, homeschoolers,
-          and families who refuse to settle for an outdated system.
-        </p>
+    <section className="relative overflow-hidden bg-gradient-to-br from-dark via-[#16213E] to-dark px-4 py-20 text-white md:py-28">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid items-center gap-10 md:grid-cols-[1fr_280px]">
+          {/* Text content */}
+          <div className="text-center md:text-left">
+            <span className="mb-4 inline-block rounded-full bg-orange/20 px-4 py-1 text-sm font-semibold text-orange">
+              Early Access &mdash; Founding Family Pricing
+            </span>
+            <h1 className="mb-6 text-4xl font-extrabold leading-tight md:text-5xl lg:text-6xl">
+              School Was Built for Factories.{" "}
+              <span className="text-teal">Your Kid Deserves Better.</span>
+            </h1>
+            <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-300 md:mx-0">
+              A done-for-you AI tutor system that gives your child personalized 1-on-1
+              learning in 20 minutes a day &mdash; built for busy parents, homeschoolers,
+              and families who refuse to settle for an outdated system.
+            </p>
 
-        {/* Stat boxes */}
-        <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {[
-            { num: "40+", label: "Math problems solved daily" },
-            { num: "3rd Grade", label: "Math level at age 5" },
-            { num: "20 min", label: "Per day is all it takes" },
-          ].map((s) => (
-            <div
-              key={s.label}
-              className="rounded-xl border border-white/10 bg-white/5 px-6 py-5 backdrop-blur"
-            >
-              <div className="text-3xl font-extrabold text-teal">{s.num}</div>
-              <div className="mt-1 text-sm text-gray-300">{s.label}</div>
+            {/* Stat boxes */}
+            <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {[
+                { num: "40+", label: "Math problems solved daily" },
+                { num: "3rd Grade", label: "Math level at age 5" },
+                { num: "20 min", label: "Per day is all it takes" },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-xl border border-white/10 bg-white/5 px-6 py-5 backdrop-blur"
+                >
+                  <div className="text-3xl font-extrabold text-teal">{s.num}</div>
+                  <div className="mt-1 text-sm text-gray-300">{s.label}</div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        <a
-          href="#join"
-          className="inline-block rounded-xl bg-orange px-8 py-4 text-lg font-bold shadow-lg transition hover:bg-orange-dark hover:shadow-xl"
-        >
-          Get Founding Family Access &mdash; $47
-        </a>
-        <a
-          href="#how"
-          className="mt-4 block text-sm text-gray-400 underline hover:text-white"
-        >
-          See How It Works &darr;
-        </a>
-        <p className="mt-4 text-xs text-gray-500">
-          30-day money-back guarantee. No subscriptions. Lifetime access.
-        </p>
+            <a
+              href="#join"
+              className="inline-block rounded-xl bg-orange px-8 py-4 text-lg font-bold shadow-lg transition hover:bg-orange-dark hover:shadow-xl"
+            >
+              Get Founding Family Access &mdash; $47
+            </a>
+            <a
+              href="#how"
+              className="mt-4 block text-sm text-gray-400 underline hover:text-white"
+            >
+              See How It Works &darr;
+            </a>
+            <p className="mt-4 text-xs text-gray-500">
+              30-day money-back guarantee. No subscriptions. Lifetime access.
+            </p>
+          </div>
+
+          {/* Floating video preview - hidden on mobile */}
+          <div className="hidden md:flex md:justify-center">
+            <div className="relative w-[240px] overflow-hidden rounded-3xl shadow-2xl ring-4 ring-white/10">
+              <video
+                className="w-full"
+                poster="/videos/thumb_5580_01.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/videos/IMG_5580_short_01.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute bottom-3 left-3 right-3 rounded-full bg-black/60 px-3 py-1.5 text-center text-xs font-semibold backdrop-blur">
+                Real session with Zy, age 5
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -184,71 +208,87 @@ function WhoItsFor() {
   );
 }
 
+/* ───────────────────── VIDEO CARD ───────────────────── */
+function VideoCard({ src, poster, caption, badge }: { src: string; poster: string; caption: string; badge?: string }) {
+  return (
+    <div className="w-[220px] shrink-0 snap-center sm:w-[240px]">
+      <div className="relative overflow-hidden rounded-2xl shadow-xl ring-2 ring-white/20">
+        <video
+          className="w-full"
+          poster={poster}
+          controls
+          preload="metadata"
+          playsInline
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+        {badge && (
+          <div className="absolute left-2 top-2 rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-semibold backdrop-blur">
+            {badge}
+          </div>
+        )}
+      </div>
+      <p className="mt-2 text-center text-xs opacity-70">{caption}</p>
+    </div>
+  );
+}
+
 /* ───────────────────── PROOF STRIP ───────────────────── */
+const proofVideos = [
+  { src: "/zy-proof-video.mp4", poster: "/zy-proof-thumb.jpg", caption: "Morning math session", badge: "Original clip" },
+  { src: "/videos/IMG_5579_short_01.mp4", poster: "/videos/thumb_5579_01.jpg", caption: "Getting started at the desk", badge: "Unscripted" },
+  { src: "/videos/IMG_5580_short_02.mp4", poster: "/videos/thumb_5580_02.jpg", caption: "Subtraction & word problems", badge: "Real session" },
+  { src: "/videos/IMG_5580_short_03.mp4", poster: "/videos/thumb_5580_03.jpg", caption: "Building streaks & progress", badge: "40+ daily" },
+];
+
 function ProofStrip() {
   return (
     <section className="bg-teal px-4 py-16 text-white">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         {/* Intro */}
-        <div className="mb-12 text-center">
+        <div className="mb-10 text-center">
           <h2 className="mb-3 text-3xl font-extrabold md:text-4xl">
             This System Wasn&apos;t Built in a Lab
           </h2>
           <p className="mx-auto max-w-2xl text-lg opacity-80">
             It was built by a dad for his 5-year-old son, Zy. No focus groups.
-            No beta testers. Just a kid, a tablet, and an AI tutor. Here&apos;s
-            what a real session looks like.
+            No beta testers. Just a kid, a tablet, and an AI tutor. Swipe
+            through real, unscripted sessions.
           </p>
         </div>
 
-        {/* Video + Stats side by side */}
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          {/* Video */}
-          <div className="flex justify-center">
-            <div className="relative w-full max-w-[320px] overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white/20">
-              <video
-                className="w-full"
-                poster="/zy-proof-thumb.jpg"
-                controls
-                preload="metadata"
-                playsInline
-              >
-                <source src="/zy-proof-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute left-3 top-3 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold backdrop-blur">
-                Real session &bull; Unscripted
-              </div>
-            </div>
-          </div>
+        {/* Scrollable video carousel */}
+        <div className="-mx-4 mb-10 flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 scrollbar-hide">
+          {proofVideos.map((v) => (
+            <VideoCard key={v.src} {...v} />
+          ))}
+        </div>
 
-          {/* Stats + context */}
-          <div className="text-center md:text-left">
-            <h3 className="mb-6 text-2xl font-bold">
-              This is what 20 minutes a day looks like.
-            </h3>
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                { num: "40+", label: "Daily math questions completed" },
-                { num: "3rd+", label: "Grade-level math at age 5" },
-                { num: "9\u201310yr", label: "Communication level" },
-                { num: "Daily", label: "Learning habit formed" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <div className="text-3xl font-extrabold">{s.num}</div>
-                  <div className="mt-1 text-sm opacity-80">{s.label}</div>
-                </div>
-              ))}
-            </div>
-            <p className="mt-8 text-sm opacity-70">
-              Zy does this every morning before breakfast. No bribing. No
-              fighting. He asks to do it.
-            </p>
+        {/* Stats */}
+        <div className="mb-10">
+          <h3 className="mb-6 text-center text-2xl font-bold">
+            This is what 20 minutes a day looks like.
+          </h3>
+          <div className="grid grid-cols-2 gap-6 text-center md:grid-cols-4">
+            {[
+              { num: "40+", label: "Daily math questions completed" },
+              { num: "3rd+", label: "Grade-level math at age 5" },
+              { num: "9\u201310yr", label: "Communication level" },
+              { num: "Daily", label: "Learning habit formed" },
+            ].map((s) => (
+              <div key={s.label}>
+                <div className="text-3xl font-extrabold md:text-4xl">{s.num}</div>
+                <div className="mt-1 text-sm opacity-80">{s.label}</div>
+              </div>
+            ))}
           </div>
+          <p className="mt-6 text-center text-sm opacity-70">
+            Zy does this every morning before breakfast. No bribing. No fighting. He asks to do it.
+          </p>
         </div>
 
         {/* Outro */}
-        <div className="mt-12 text-center">
+        <div className="text-center">
           <p className="mx-auto max-w-xl text-lg font-medium opacity-90">
             We built this for our family first. Now we&apos;re sharing it with yours.
           </p>
@@ -274,6 +314,7 @@ const features = [
       "Custom system prompts by grade level",
       "Weekly auto-generated progress summaries",
     ],
+    video: { src: "/videos/IMG_5579_short_03.mp4", poster: "/videos/thumb_5579_03.jpg" },
   },
   {
     icon: "\uD83D\uDCDA",
@@ -331,6 +372,22 @@ function WhatYouGet() {
                   </li>
                 ))}
               </ul>
+              {f.video && (
+                <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-gray-200">
+                  <video
+                    className="w-full"
+                    poster={f.video.poster}
+                    controls
+                    preload="metadata"
+                    playsInline
+                  >
+                    <source src={f.video.src} type="video/mp4" />
+                  </video>
+                  <p className="bg-gray-50 px-3 py-1.5 text-center text-xs text-gray-500">
+                    See the actual AI tutor in action
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -357,14 +414,32 @@ function HowItWorks() {
         </h2>
         <div className="space-y-8">
           {steps.map((s) => (
-            <div key={s.num} className="flex gap-5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal text-lg font-bold text-white">
-                {s.num}
+            <div key={s.num}>
+              <div className="flex gap-5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal text-lg font-bold text-white">
+                  {s.num}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold">{s.title}</h3>
+                  <p className="text-gray-600">{s.desc}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold">{s.title}</h3>
-                <p className="text-gray-600">{s.desc}</p>
-              </div>
+              {s.num === 4 && (
+                <div className="ml-[60px] mt-4 max-w-[280px] overflow-hidden rounded-2xl shadow-lg ring-1 ring-gray-200">
+                  <video
+                    className="w-full"
+                    poster="/videos/thumb_5580_05.jpg"
+                    controls
+                    preload="metadata"
+                    playsInline
+                  >
+                    <source src="/videos/IMG_5580_short_05.mp4" type="video/mp4" />
+                  </video>
+                  <p className="bg-white px-3 py-1.5 text-center text-xs text-gray-500">
+                    A real daily session in action
+                  </p>
+                </div>
+              )}
             </div>
           ))}
         </div>
