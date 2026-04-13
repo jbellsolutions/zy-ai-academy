@@ -1,6 +1,63 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+
+/* ───────────────────── LAZY VIDEO ───────────────────── */
+function LazyVideo({
+  src,
+  poster,
+  autoPlay = false,
+  muted = false,
+  loop = false,
+  controls = true,
+  className = "",
+  preload = "none",
+}: {
+  src: string;
+  poster: string;
+  autoPlay?: boolean;
+  muted?: boolean;
+  loop?: boolean;
+  controls?: boolean;
+  className?: string;
+  preload?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { rootMargin: "200px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={className}>
+      {visible ? (
+        <video
+          className="w-full"
+          poster={poster}
+          autoPlay={autoPlay}
+          muted={muted}
+          loop={loop}
+          controls={controls}
+          preload={preload}
+          playsInline
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={poster} alt="" className="w-full" loading="lazy" />
+      )}
+    </div>
+  );
+}
 
 /* ───────────────────── NAV ───────────────────── */
 function Nav() {
@@ -149,6 +206,17 @@ function WhyNow() {
               <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> 20 min/day &mdash; fits any schedule</li>
               <li className="flex items-start gap-2"><span className="text-teal font-bold mt-0.5">&#10003;</span> Parent dashboard with daily progress tracking</li>
             </ul>
+            <div className="mt-5 overflow-hidden rounded-xl">
+              <LazyVideo
+                src="/videos/IMG_5584_audio_enhanced.mp4"
+                poster="/videos/thumb_5584_ae.jpg"
+                autoPlay
+                muted
+                loop
+                controls={false}
+                preload="metadata"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -213,15 +281,7 @@ function VideoCard({ src, poster, caption, badge }: { src: string; poster: strin
   return (
     <div className="w-[220px] shrink-0 snap-center sm:w-[240px]">
       <div className="relative overflow-hidden rounded-2xl shadow-xl ring-2 ring-white/20">
-        <video
-          className="w-full"
-          poster={poster}
-          controls
-          preload="metadata"
-          playsInline
-        >
-          <source src={src} type="video/mp4" />
-        </video>
+        <LazyVideo src={src} poster={poster} preload="none" />
         {badge && (
           <div className="absolute left-2 top-2 rounded-full bg-black/60 px-2.5 py-1 text-[10px] font-semibold backdrop-blur">
             {badge}
@@ -239,6 +299,8 @@ const proofVideos = [
   { src: "/videos/IMG_5579_short_01.mp4", poster: "/videos/thumb_5579_01.jpg", caption: "Getting started at the desk", badge: "Unscripted" },
   { src: "/videos/IMG_5580_short_02.mp4", poster: "/videos/thumb_5580_02.jpg", caption: "Subtraction & word problems", badge: "Real session" },
   { src: "/videos/IMG_5580_short_03.mp4", poster: "/videos/thumb_5580_03.jpg", caption: "Building streaks & progress", badge: "40+ daily" },
+  { src: "/videos/IMG_5585_short_03.mp4", poster: "/videos/thumb_5585_03.jpg", caption: "Focus mode — full session", badge: "New session" },
+  { src: "/videos/IMG_5583_short_01.mp4", poster: "/videos/thumb_5583_01.jpg", caption: "Snack time = learning time", badge: "Real life" },
 ];
 
 function ProofStrip() {
@@ -298,6 +360,66 @@ function ProofStrip() {
           >
             Join the Founding Families
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────────────── WATCH A REAL SESSION ───────────────────── */
+function WatchRealSession() {
+  return (
+    <section className="bg-gradient-to-br from-dark via-[#16213E] to-dark px-4 py-20 text-white">
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-10 text-center">
+          <span className="mb-4 inline-block rounded-full bg-orange/20 px-4 py-1 text-sm font-semibold text-orange">
+            Sound On
+          </span>
+          <h2 className="mb-3 text-3xl font-extrabold md:text-4xl">
+            Watch a Full Session
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-gray-300">
+            No scripts. No editing. Just Zy, his tablet, and his AI tutor.
+            Press play and hear a real session &mdash; this is exactly what your
+            child&apos;s daily 20 minutes sounds like.
+          </p>
+        </div>
+
+        {/* Main video - 117s full session */}
+        <div className="mb-8 overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white/10">
+          <LazyVideo
+            src="/videos/IMG_5585_audio_enhanced.mp4"
+            poster="/videos/thumb_5585_ae.jpg"
+            preload="none"
+            className="aspect-video"
+          />
+        </div>
+
+        {/* Secondary video - 68s desk setup */}
+        <div className="grid items-center gap-8 md:grid-cols-[1fr_1.2fr]">
+          <div className="overflow-hidden rounded-xl shadow-lg ring-2 ring-white/10">
+            <LazyVideo
+              src="/videos/IMG_5583_audio_enhanced.mp4"
+              poster="/videos/thumb_5583_ae.jpg"
+              preload="none"
+            />
+          </div>
+          <div className="text-center md:text-left">
+            <h3 className="mb-3 text-xl font-bold">
+              A tablet, a snack, and 20 minutes.
+            </h3>
+            <p className="mb-4 text-gray-300">
+              That&apos;s the whole setup. No fancy equipment. No classroom.
+              Just a kid who sits down every morning because he wants to &mdash;
+              not because anyone makes him.
+            </p>
+            <a
+              href="#join"
+              className="inline-block rounded-xl bg-orange px-8 py-3 font-bold transition hover:bg-orange-dark"
+            >
+              Get Founding Family Access &mdash; $47
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -816,6 +938,7 @@ export default function Home() {
       <WhyNow />
       <WhoItsFor />
       <ProofStrip />
+      <WatchRealSession />
       <WhatYouGet />
       <HowItWorks />
       <Pricing />
