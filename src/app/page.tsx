@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 
 /* ───────────────────── LAZY VIDEO ───────────────────── */
 function LazyVideo({
@@ -80,14 +81,14 @@ function Nav() {
         <div className={`${open ? "flex" : "hidden"} absolute top-full left-0 w-full flex-col gap-3 bg-dark px-4 pb-4 md:static md:flex md:w-auto md:flex-row md:items-center md:gap-6 md:bg-transparent md:p-0`}>
           <a href="#how" className="hover:text-orange transition">How It Works</a>
           <a href="#pricing" className="hover:text-orange transition">Pricing</a>
+          <Link href="/founding-circle" className="hover:text-orange transition">Founding Circle</Link>
           <a href="#faq" className="hover:text-orange transition">FAQ</a>
-          <a href="#tutor" className="hover:text-teal transition">Become a Tutor</a>
-          <a
-            href="#join"
+          <Link
+            href="/founding-circle"
             className="rounded-lg bg-orange px-5 py-2 text-center font-semibold transition hover:bg-orange-dark"
           >
-            Get Early Access
-          </a>
+            Join Founding Circle
+          </Link>
         </div>
       </div>
     </nav>
