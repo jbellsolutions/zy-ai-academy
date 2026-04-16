@@ -80,6 +80,7 @@ function Nav() {
         </button>
         <div className={`${open ? "flex" : "hidden"} absolute top-full left-0 w-full flex-col gap-3 bg-dark px-4 pb-4 md:static md:flex md:w-auto md:flex-row md:items-center md:gap-6 md:bg-transparent md:p-0`}>
           <a href="#how" className="hover:text-orange transition">How It Works</a>
+          <a href="#community" className="hover:text-orange transition">Community</a>
           <a href="#pricing" className="hover:text-orange transition">Pricing</a>
           <Link href="/founding-circle" className="hover:text-orange transition">Founding Circle</Link>
           <a href="#faq" className="hover:text-orange transition">FAQ</a>
@@ -111,9 +112,9 @@ function Hero() {
               <span className="text-teal">Your Kid Deserves Better.</span>
             </h1>
             <p className="mx-auto mb-10 max-w-2xl text-lg text-gray-300 md:mx-0">
-              A done-for-you AI tutor system that gives your child personalized 1-on-1
-              learning in 1 hour a day &mdash; built for busy parents, homeschoolers,
-              and families who refuse to settle for an outdated system.
+              A done-for-you AI tutor system &mdash; with a community of parents
+              behind you. Personalized 1-on-1 learning in 1 hour a day, with real
+              setup help and daily accountability from families on the same journey.
             </p>
 
             {/* Stat boxes */}
@@ -146,7 +147,7 @@ function Hero() {
               See How It Works &darr;
             </a>
             <p className="mt-4 text-xs text-gray-500">
-              30-day money-back guarantee. No subscriptions. Lifetime access.
+              30-day money-back guarantee. Lifetime product access. 30 days free community included.
             </p>
           </div>
 
@@ -428,7 +429,7 @@ function WatchRealSession() {
 }
 
 /* ───────────────────── WHAT YOU GET ───────────────────── */
-const features = [
+const features: { icon: string; title: string; items: string[]; highlight?: boolean; video?: { src: string; poster: string } }[] = [
   {
     icon: "\uD83E\uDDE0",
     title: "AI Tutor System",
@@ -458,12 +459,24 @@ const features = [
     ],
   },
   {
+    icon: "\uD83D\uDC65",
+    title: "Parent Community on Skool",
+    highlight: true,
+    items: [
+      "Private group of parents doing this alongside you",
+      "Done-for-you setup help \u2014 we install the tutors WITH you",
+      "Daily check-ins, wins, and accountability",
+      "Ask questions and get answers from real humans",
+      "30 days FREE with your Founding Family access",
+    ],
+  },
+  {
     icon: "\uD83C\uDF81",
-    title: "Founding Family Bonus",
+    title: "Founding Family Bonuses",
     items: [
       "Lifetime access to all future updates",
-      "Private community access",
       "FREE Safe Vibe Coding for Kids (Minecraft!)",
+      "Early access to new subjects as we build them",
     ],
   },
 ];
@@ -476,36 +489,36 @@ function WhatYouGet() {
           Everything You Get
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-          A complete system &mdash; not just a course. Set it up once and your child
-          learns every day.
+          A complete system &mdash; not just a product. AI tutors, a parent
+          community, and real humans helping you every step of the way.
         </p>
         <div className="grid gap-6 sm:grid-cols-2">
           {features.map((f) => (
             <div
               key={f.title}
-              className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm"
+              className={`rounded-2xl p-8 shadow-sm ${
+                f.highlight
+                  ? "border-2 border-teal bg-teal/5 sm:col-span-2"
+                  : "border border-gray-200 bg-white"
+              }`}
             >
               <div className="mb-3 text-4xl">{f.icon}</div>
               <h3 className="mb-4 text-xl font-bold">{f.title}</h3>
               <ul className="space-y-2">
                 {f.items.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-gray-700">
-                    <span className="mt-0.5 text-teal font-bold">&#10003;</span>
+                    <span className={`mt-0.5 font-bold ${f.highlight ? "text-teal" : "text-teal"}`}>&#10003;</span>
                     {item}
                   </li>
                 ))}
               </ul>
               {f.video && (
                 <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-gray-200">
-                  <video
-                    className="w-full"
+                  <LazyVideo
+                    src={f.video.src}
                     poster={f.video.poster}
-                    controls
-                    preload="metadata"
-                    playsInline
-                  >
-                    <source src={f.video.src} type="video/mp4" />
-                  </video>
+                    preload="none"
+                  />
                   <p className="bg-gray-50 px-3 py-1.5 text-center text-xs text-gray-500">
                     See the actual AI tutor in action
                   </p>
@@ -519,13 +532,78 @@ function WhatYouGet() {
   );
 }
 
+/* ───────────────────── COMMUNITY SUPPORT ───────────────────── */
+function CommunitySupport() {
+  return (
+    <section id="community" className="bg-gradient-to-br from-dark via-[#16213E] to-dark px-4 py-20 text-white">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-12 text-center">
+          <span className="mb-4 inline-block rounded-full bg-teal/20 px-4 py-1 text-sm font-semibold text-teal">
+            Included Free for 30 Days
+          </span>
+          <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
+            You&apos;re Not Doing This Alone
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-gray-300">
+            Most digital products hand you a download and disappear. We give you
+            a community of parents and a team that helps you set everything up &mdash;
+            so your child is actually learning by Day 1, not stuck on setup.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <div className="mb-3 text-4xl">{"\uD83D\uDEE0\uFE0F"}</div>
+            <h3 className="mb-2 text-xl font-bold">Done-For-You Setup</h3>
+            <p className="text-gray-300">
+              Stuck on setup? Post in the community and our team walks you through
+              it &mdash; screen shares, video walkthroughs, whatever it takes.
+              You won&apos;t be left guessing.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <div className="mb-3 text-4xl">{"\uD83D\uDCAC"}</div>
+            <h3 className="mb-2 text-xl font-bold">Daily Accountability</h3>
+            <p className="text-gray-300">
+              Share your child&apos;s wins, see what other families are doing, and
+              stay motivated. When 50 parents are all doing the same thing,
+              it&apos;s harder to quit on Day 3.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">
+            <div className="mb-3 text-4xl">{"\uD83E\uDD1D"}</div>
+            <h3 className="mb-2 text-xl font-bold">Real Human Support</h3>
+            <p className="text-gray-300">
+              Questions about prompts? Not sure if it&apos;s working right? Ask the
+              community. Other parents and our team respond &mdash; usually within
+              hours, not days.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-12 rounded-2xl border-2 border-teal bg-teal/10 p-8 text-center">
+          <h3 className="mb-2 text-xl font-bold">
+            30 Days Free. No Credit Card Required for Community Access.
+          </h3>
+          <p className="mx-auto max-w-xl text-gray-300">
+            Your Founding Family purchase includes 30 days of full community
+            access. After 30 days, you can continue for a small monthly fee &mdash;
+            or keep your AI tutors forever, no community required. The product
+            is yours for life either way.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ───────────────────── HOW IT WORKS ───────────────────── */
 const steps = [
   { num: 1, title: "Build Your Child\u2019s Profile", desc: "Enter their name, age, grade, and learning goals." },
-  { num: 2, title: "Install the AI Tutors", desc: "Copy our pre-built prompts into ChatGPT. Takes 5 minutes." },
-  { num: 3, title: "Set the Daily Habit", desc: "Pick a 1-hour time slot that works for your family." },
+  { num: 2, title: "Install the AI Tutors (We Help)", desc: "Copy our pre-built prompts into ChatGPT \u2014 or post in the community and we\u2019ll walk you through it step by step. Most parents are done in 10 minutes." },
+  { num: 3, title: "Set the Daily Habit", desc: "Pick a 1-hour time slot that works for your family. Share it in the community for accountability." },
   { num: 4, title: "Your Child Starts Learning", desc: "They open ChatGPT, the tutor greets them by name, and the session begins." },
-  { num: 5, title: "You Get Weekly Updates", desc: "Auto-generated progress emails so you always know how they\u2019re doing." },
+  { num: 5, title: "You Get Weekly Updates", desc: "Auto-generated progress emails so you always know how they\u2019re doing. Share milestones with other parents in the group." },
 ];
 
 function HowItWorks() {
@@ -586,45 +664,35 @@ function HowItWorks() {
 /* ───────────────────── PRICING ───────────────────── */
 const tiers = [
   {
-    name: "Starter",
-    price: "$97",
-    period: "one-time",
-    highlight: false,
-    badge: null as string | null,
-    features: [
-      "AI tutors (math + reading)",
-      "Parent dashboard",
-      "Daily habit template",
-      "Homework help prompts",
-      "Standard support",
-    ],
-  },
-  {
     name: "Founding Family",
     price: "$47",
     period: "one-time",
     badge: "Most Popular",
     highlight: true,
     features: [
-      "Everything in Starter",
-      "FREE Vibe Coding for Kids bonus",
+      "AI tutors (math + reading)",
+      "Parent dashboard & progress tracking",
+      "Daily habit templates & homework help prompts",
+      "FREE Vibe Coding for Kids bonus ($197 value)",
       "Free future updates forever",
-      "Private community access",
-      "Early certification access",
+      "30 days FREE Skool community access",
+      "Done-for-you setup help from our team",
+      "Daily accountability with other parents",
     ],
   },
   {
-    name: "Custom Plan",
+    name: "VIP Family",
     price: "$297",
     period: "one-time",
     highlight: false,
     badge: null as string | null,
     features: [
       "Everything in Founding Family",
-      "Done-for-you setup",
-      "30-min onboarding call",
-      "Custom tutor configuration",
-      "90-day priority support",
+      "Private 30-min onboarding video call",
+      "Custom tutor configuration for your child",
+      "6 months FREE Skool community (not just 30 days)",
+      "Direct message access to Justin",
+      "Priority support \u2014 responses within 4 hours",
     ],
   },
 ];
@@ -639,7 +707,7 @@ function Pricing() {
         <p className="mx-auto mb-12 max-w-xl text-center text-gray-600">
           No subscriptions. No hidden fees. Pay once, get lifetime access.
         </p>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
           {tiers.map((t) => (
             <div
               key={t.name}
@@ -661,7 +729,7 @@ function Pricing() {
               </div>
               {t.highlight && (
                 <p className="mb-4 text-sm font-semibold text-orange">
-                  50% off launch pricing
+                  50% off launch pricing &mdash; includes 30 days free community
                 </p>
               )}
               <ul className="mb-8 mt-4 space-y-3">
@@ -757,7 +825,7 @@ const faqs = [
   },
   {
     q: "Is it hard to set up?",
-    a: "Not at all. Setup takes about 10 minutes. You copy our pre-built prompts into ChatGPT, and your child is ready to go.",
+    a: "Not at all. Setup takes about 10 minutes, and you don\u2019t have to do it alone. When you join, you get 30 days of free access to our Skool community where our team will walk you through every step. Most parents are set up and running their first session on Day 1.",
   },
   {
     q: "What do I need?",
@@ -774,6 +842,22 @@ const faqs = [
   {
     q: "What if my child doesn\u2019t use it?",
     a: "You\u2019re covered by our 30-day guarantee. If they don\u2019t complete 10 sessions, you get a full refund.",
+  },
+  {
+    q: "What is the Skool community?",
+    a: "It\u2019s a private online group (hosted on Skool.com) where Founding Families connect, share wins, ask questions, and get setup help. Think of it as your support system \u2014 other parents doing the exact same thing, plus our team answering questions daily.",
+  },
+  {
+    q: "What does \u201Cdone-for-you setup\u201D mean?",
+    a: "It means you\u2019re not on your own. When you join the community, post that you need help setting up the AI tutors, and our team will walk you through every step \u2014 from copying the prompts to configuring ChatGPT to running your child\u2019s first session. We\u2019ll do it with you, not just hand you instructions.",
+  },
+  {
+    q: "What happens after the 30 days of free community access?",
+    a: "After 30 days, you can choose to continue in the Skool community for a small monthly fee. But here\u2019s the important part: your AI tutors, templates, dashboard, and Vibe Coding bonus are yours forever regardless. The community is a bonus, not a requirement. Many families are fully self-sufficient after the first month.",
+  },
+  {
+    q: "Do I NEED the community to use the AI tutors?",
+    a: "No. The AI tutors work completely on their own. The community is there for setup help, accountability, and support \u2014 but once you\u2019re set up, you don\u2019t need it. Think of it like training wheels: incredibly helpful at the start, optional once you\u2019re rolling.",
   },
 ];
 
@@ -812,11 +896,12 @@ function FinalCTA() {
     >
       <div className="mx-auto max-w-3xl">
         <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
-          Give Your Child the AI Advantage
+          Give Your Child the AI Advantage &mdash; With a Community Behind You
         </h2>
         <p className="mx-auto mb-8 max-w-xl text-gray-300">
-          Join the founding families and give your child a head start in math,
-          reading, and real-world coding &mdash; all powered by AI.
+          Join the founding families getting personalized AI tutoring, real setup
+          help, and a community of parents on the same mission. Everything you
+          need for $47 &mdash; including 30 days of free community access.
         </p>
         <a
           href="#join"
@@ -825,8 +910,8 @@ function FinalCTA() {
           Get Founding Family Access &mdash; $47
         </a>
         <p className="mt-4 text-sm text-gray-400">
-          30-day money-back guarantee &bull; No subscriptions &bull; Lifetime
-          access
+          30-day money-back guarantee &bull; Lifetime product access &bull; 30
+          days free community
         </p>
       </div>
     </section>
@@ -941,6 +1026,7 @@ export default function Home() {
       <ProofStrip />
       <WatchRealSession />
       <WhatYouGet />
+      <CommunitySupport />
       <HowItWorks />
       <Pricing />
       <VibeCodingBonus />
