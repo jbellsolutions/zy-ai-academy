@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
 
 /* ───────────────────── LAZY VIDEO ───────────────────── */
 function LazyVideo({
@@ -82,14 +81,16 @@ function Nav() {
           <a href="#how" className="hover:text-orange transition">How It Works</a>
           <a href="#community" className="hover:text-orange transition">Community</a>
           <a href="#pricing" className="hover:text-orange transition">Pricing</a>
-          <Link href="/founding-circle" className="hover:text-orange transition">Founding Circle</Link>
+          <a href="https://www.skool.com/zyaiacademy-6081" target="_blank" rel="noopener noreferrer" className="hover:text-orange transition">Community</a>
           <a href="#faq" className="hover:text-orange transition">FAQ</a>
-          <Link
-            href="/founding-circle"
+          <a
+            href="https://www.skool.com/zyaiacademy-6081"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-lg bg-orange px-5 py-2 text-center font-semibold transition hover:bg-orange-dark"
           >
-            Join Founding Circle
-          </Link>
+            Join Community
+          </a>
         </div>
       </div>
     </nav>
@@ -135,7 +136,9 @@ function Hero() {
             </div>
 
             <a
-              href="#join"
+              href="https://www.skool.com/zyaiacademy-6081"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-xl bg-orange px-8 py-4 text-lg font-bold shadow-lg transition hover:bg-orange-dark hover:shadow-xl"
             >
               Get Founding Family Access &mdash; $47
@@ -218,6 +221,95 @@ function WhyNow() {
                 controls={false}
                 preload="metadata"
               />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────────────── MISSION ───────────────────── */
+function Mission() {
+  return (
+    <section className="bg-gradient-to-br from-dark via-[#16213E] to-dark px-4 py-16 text-white">
+      <div className="mx-auto max-w-4xl text-center">
+        <span className="mb-4 inline-block rounded-full bg-teal/20 px-4 py-1 text-sm font-semibold text-teal">
+          Our Mission
+        </span>
+        <h2 className="mb-6 text-3xl font-extrabold md:text-4xl">
+          Every Kid Deserves a 1-on-1 Education
+        </h2>
+        <p className="mx-auto max-w-2xl text-lg text-gray-300">
+          We help kids learn the way they actually learn &mdash; with AI that adapts to
+          them, not a classroom designed in 1850. We&apos;re freeing families from an
+          outdated system and teaching kids that they can create value, think
+          independently, and build something real &mdash; starting right now.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────────────── ZION'S STORY ───────────────────── */
+function ZionsStory() {
+  return (
+    <section className="px-4 py-20">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-10 text-center">
+          <span className="mb-4 inline-block rounded-full bg-orange/10 px-4 py-1 text-sm font-semibold text-orange">
+            Zion&apos;s First Business
+          </span>
+          <h2 className="mb-4 text-3xl font-extrabold md:text-4xl">
+            Built by a Dad. Proven by His 5-Year-Old. Run Together.
+          </h2>
+        </div>
+        <div className="grid gap-8 md:grid-cols-[1fr_1fr]">
+          <div className="space-y-5 text-gray-700">
+            <p className="text-lg">
+              Zy AI Academy started when Justin watched his 5-year-old son, Zion,
+              struggle with basic addition. The classroom wasn&apos;t working. So he
+              built something better &mdash; AI tutors that adapt to Zion&apos;s
+              pace, make learning feel like play, and deliver real results.
+            </p>
+            <p>
+              Zion went from struggling to completing 40+ math problems daily and
+              reading at a 9&ndash;10 year-old level. He does it every morning before
+              breakfast &mdash; because he wants to, not because anyone makes him.
+            </p>
+            <p>
+              Now it&apos;s his first business. Zion is the Founder &amp; Chief
+              Learning Officer. He tests every tutor, gives real feedback, records
+              the proof sessions you see on this site, and earns a real paycheck
+              for his work. He&apos;s learning what business is, how money works,
+              and what it means to help people.
+            </p>
+          </div>
+          <div className="space-y-5">
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+              <h3 className="mb-4 text-lg font-bold text-gray-800">Zion&apos;s Role</h3>
+              <ul className="space-y-3">
+                {[
+                  { icon: "\uD83E\uDDEA", role: "Product Tester", desc: "Tests every tutor before it ships" },
+                  { icon: "\uD83C\uDFAC", role: "Brand Ambassador", desc: "His real sessions are the proof" },
+                  { icon: "\uD83D\uDCDD", role: "Content Contributor", desc: "Records sessions that become content" },
+                  { icon: "\uD83D\uDC4D", role: "Quality Reviewer", desc: "Rates lessons, flags what works" },
+                ].map((r) => (
+                  <li key={r.role} className="flex items-start gap-3">
+                    <span className="text-2xl">{r.icon}</span>
+                    <div>
+                      <div className="font-semibold text-gray-800">{r.role}</div>
+                      <div className="text-sm text-gray-500">{r.desc}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-2xl border-2 border-teal bg-teal/5 p-5 text-center">
+              <p className="text-sm font-semibold text-teal">
+                Every purchase helps Zion learn about investing, saving, and
+                building &mdash; 30% investing, 30% savings, 30% his paycheck.
+              </p>
             </div>
           </div>
         </div>
@@ -357,7 +449,9 @@ function ProofStrip() {
             We built this for our family first. Now we&apos;re sharing it with yours.
           </p>
           <a
-            href="#join"
+            href="https://www.skool.com/zyaiacademy-6081"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 inline-block rounded-xl bg-orange px-8 py-3 font-bold text-white transition hover:bg-orange-dark"
           >
             Join the Founding Families
@@ -416,7 +510,9 @@ function WatchRealSession() {
               not because anyone makes him.
             </p>
             <a
-              href="#join"
+              href="https://www.skool.com/zyaiacademy-6081"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-xl bg-orange px-8 py-3 font-bold transition hover:bg-orange-dark"
             >
               Get Founding Family Access &mdash; $47
@@ -741,7 +837,9 @@ function Pricing() {
                 ))}
               </ul>
               <a
-                href="#join"
+                href="https://www.skool.com/zyaiacademy-6081"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`block rounded-lg py-3 text-center font-semibold transition ${
                   t.highlight
                     ? "bg-orange text-white hover:bg-orange-dark"
@@ -806,7 +904,9 @@ function VibeCodingBonus() {
             Included FREE with every Founding Family membership &mdash; a $197 value.
           </p>
           <a
-            href="#join"
+            href="https://www.skool.com/zyaiacademy-6081"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 inline-block rounded-xl bg-orange px-8 py-3 font-bold transition hover:bg-orange-dark"
           >
             Get Founding Family Access &mdash; $47
@@ -904,7 +1004,9 @@ function FinalCTA() {
           need for $47 &mdash; including 30 days of free community access.
         </p>
         <a
-          href="#join"
+          href="https://www.skool.com/zyaiacademy-6081"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block rounded-xl bg-orange px-10 py-4 text-lg font-bold shadow-lg transition hover:bg-orange-dark hover:shadow-xl"
         >
           Get Founding Family Access &mdash; $47
@@ -1022,6 +1124,8 @@ export default function Home() {
       <Nav />
       <Hero />
       <WhyNow />
+      <Mission />
+      <ZionsStory />
       <WhoItsFor />
       <ProofStrip />
       <WatchRealSession />
