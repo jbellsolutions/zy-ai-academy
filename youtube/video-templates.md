@@ -85,12 +85,12 @@ In this video, [brief summary of what the viewer will learn/see].
 ---
 
 FREE RESOURCES:
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 Free Guide - "5 Ways to Use ChatGPT as Your Child's Tutor": [LEAD MAGNET LINK]
 
 JOIN THE FOUNDING CIRCLE:
 Get lifetime access to the full AI tutoring system at the lowest price it'll ever be.
-Details: https://zy-academy-landing.vercel.app
+Details: https://zyaiacademy.com
 
 KICKSTARTER (when live):
 Back the project: [KICKSTARTER LINK]
@@ -214,8 +214,8 @@ ChatGPT tutorial, AI setup guide, how to use ChatGPT, ChatGPT prompts education,
 Thanks for watching! If you have questions about setting up AI tutoring for YOUR child,
 drop them in the comments -- I read and reply to every one.
 
-Get started free: https://zy-academy-landing.vercel.app
-Join the Founding Circle: https://zy-academy-landing.vercel.app
+Get started free: https://zyaiacademy.com
+Join the Founding Circle: https://zyaiacademy.com
 ```
 
 ---

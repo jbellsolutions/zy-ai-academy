@@ -46,8 +46,8 @@ What you'll notice:
 [TIMESTAMP] - Results after 6 months
 
 FREE RESOURCES:
-Website & Free Guide: https://zy-academy-landing.vercel.app
-Join the Founding Circle (lifetime access): https://zy-academy-landing.vercel.app
+Website & Free Guide: https://zyaiacademy.com
+Join the Founding Circle (lifetime access): https://zyaiacademy.com
 
 SUBSCRIBE for real AI tutoring sessions, setup tutorials, and honest results.
 
@@ -82,10 +82,10 @@ What's covered:
 [TIMESTAMP] - Common mistakes to avoid
 
 COPY THE EXACT PROMPTS:
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 
 Want us to set everything up for you?
-Join the Founding Circle: https://zy-academy-landing.vercel.app
+Join the Founding Circle: https://zyaiacademy.com
 
 #ChatGPT #AITutor #HomeschoolMath #AIForKids #HomeschoolTech
 ```
@@ -105,7 +105,7 @@ Join the Founding Circle: https://zy-academy-landing.vercel.app
 Zy (age 5) working with his AI tutor. 40+ math problems every day.
 
 Full session on our channel.
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 
 #AITutoring #HomeschoolAI #KidsMath #ChatGPT #Shorts
 ```
@@ -122,7 +122,7 @@ No scripts. No tricks. Just a 5-year-old and his AI math tutor.
 
 This is what personalized learning looks like.
 
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 
 #AIEducation #HomeschoolTech #PersonalizedLearning #Shorts
 ```
@@ -138,7 +138,7 @@ Website: https://zy-academy-landing.vercel.app
 40+ math problems before most kids eat breakfast. AI tutoring is different.
 
 Full story on our channel.
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 
 #MorningRoutine #AITutor #HomeschoolLife #Shorts
 ```
@@ -172,8 +172,8 @@ In this video I'll break down exactly what changed, what didn't work at first, a
 [TIMESTAMP] - What I'd change
 [TIMESTAMP] - Where we're headed
 
-Website: https://zy-academy-landing.vercel.app
-Founding Circle: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
+Founding Circle: https://zyaiacademy.com
 
 #AITutoring #HomeschoolResults #ChatGPTEducation #ParentingWin
 ```
@@ -204,7 +204,7 @@ The prompts:
 [TIMESTAMP] - Prompt 5: The Fun Challenge
 
 Copy all 5 prompts free:
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 
 #ChatGPTPrompts #AITutor #HomeschoolMath #AIEducation
 ```
@@ -238,7 +238,7 @@ Not a genius. Not pushy parenting. Just the right tool.
 
 AI tutoring adapts to YOUR child's level.
 
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 
 #GiftedKids #AIEducation #HomeschoolMath #Shorts
 ```
@@ -281,7 +281,7 @@ In this video I share why the AI-in-education debate misses the point, what pare
 [TIMESTAMP] - What I built instead
 [TIMESTAMP] - What I'd tell any parent watching this
 
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 
 #AIEducation #HomeschoolPerspective #ParentingInTheAIAge #EdTech
 ```
@@ -312,7 +312,7 @@ What's covered:
 [TIMESTAMP] - Vocabulary building sessions
 [TIMESTAMP] - Making it fun for reluctant readers
 
-Free setup guide: https://zy-academy-landing.vercel.app
+Free setup guide: https://zyaiacademy.com
 
 #AIReading #ReadingTutor #HomeschoolReading #ChatGPTEducation
 ```
@@ -353,7 +353,7 @@ In this video:
 [TIMESTAMP] - What he built
 
 Full Minecraft coding curriculum coming to Zy AI Academy.
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 
 #MinecraftCoding #CodingForKids #AIEducation #MinecraftMods #STEM
 ```
@@ -384,8 +384,8 @@ The full breakdown:
 
 Total time: about 20 minutes. That's it.
 
-Get the full system: https://zy-academy-landing.vercel.app
-Founding Circle: https://zy-academy-landing.vercel.app
+Get the full system: https://zyaiacademy.com
+Founding Circle: https://zyaiacademy.com
 
 #DailyRoutine #AITutoring #HomeschoolRoutine #ChatGPTEducation
 ```

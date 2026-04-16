@@ -116,11 +116,11 @@ You'll find:
 Whether you're homeschooling, supplementing school, or just curious about AI and education -- this channel is for you.
 
 FREE RESOURCES:
-Website: https://zy-academy-landing.vercel.app
+Website: https://zyaiacademy.com
 Free Guide: [LEAD MAGNET LINK]
 
 JOIN THE FOUNDING CIRCLE:
-Get lifetime access to the full Zy AI Academy system at the lowest price it'll ever be. Details: https://zy-academy-landing.vercel.app
+Get lifetime access to the full Zy AI Academy system at the lowest price it'll ever be. Details: https://zyaiacademy.com
 
 BUSINESS INQUIRIES:
 jbellsolutions@gmail.com

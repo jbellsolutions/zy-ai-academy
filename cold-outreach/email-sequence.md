@@ -41,7 +41,7 @@ Would you be open to a quick chat about it?
 Best,
 Justin Bellware
 Zy AI Academy
-https://zy-academy-landing.vercel.app
+https://zyaiacademy.com
 
 ---
 
@@ -147,7 +147,7 @@ I don't want to keep filling up your inbox, so this will be my last email unless
 
 If the timing isn't right, no worries at all. Here's what I'll leave you with:
 
-- Our website (free info, no sign-up required): https://zy-academy-landing.vercel.app
+- Our website (free info, no sign-up required): https://zyaiacademy.com
 - Our YouTube with real session videos: https://www.youtube.com/@ZyAIAcademy
 - The free parent guide: [LINK TO LEAD MAGNET]
 
@@ -158,7 +158,7 @@ Wishing [CO-OP NAME] families an amazing school year.
 Best,
 Justin Bellware
 Zy AI Academy
-https://zy-academy-landing.vercel.app
+https://zyaiacademy.com
 
 ---
 

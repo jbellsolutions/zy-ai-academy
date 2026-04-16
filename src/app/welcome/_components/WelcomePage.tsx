@@ -367,7 +367,7 @@ export default function WelcomePage({
             ask questions, and celebrate your child&apos;s wins together.
           </p>
           <a
-            href="https://skool.com/zy-ai-academy"
+            href="https://www.skool.com/zyaiacademy-6081"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block rounded-xl bg-orange px-8 py-4 text-lg font-bold text-white shadow-lg transition hover:bg-orange-dark hover:shadow-xl"
