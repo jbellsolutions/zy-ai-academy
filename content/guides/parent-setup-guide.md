@@ -64,7 +64,7 @@ Letting your child pick their own electives gives them ownership over their lear
 
 Each tutor comes as a "system prompt" -- a block of text that tells the AI how to behave. Here's how to set it up on each platform.
 
-### ChatGPT (Recommended)
+### Option A — ChatGPT (Recommended)
 
 This is the best experience. Custom GPTs remember their instructions and you only set them up once.
 
@@ -81,15 +81,31 @@ This is the best experience. Custom GPTs remember their instructions and you onl
 
 Once saved, each tutor appears in your sidebar. Your child just clicks the tutor name to start a session.
 
-### Claude
+### Option B — Claude (claude.ai)
 
-1. Go to [claude.ai](https://claude.ai)
-2. Click **Start new project** (or open an existing project)
-3. In the project settings, find **Custom Instructions**
-4. Paste the entire system prompt for that tutor
-5. Start a new conversation within that project
+Claude Projects let you save a custom AI tutor that remembers your child's name, age, and preferences across every session — no re-setup required.
 
-Note: Claude does not have persistent Custom GPTs like ChatGPT. You will use Projects to keep each tutor's instructions saved.
+**Setup (2 minutes per tutor):**
+
+1. Go to [claude.ai](https://claude.ai) → click **Projects** in the left sidebar
+2. Click **New Project** → name it after the tutor (e.g., "Math Lab", "Language Arts")
+3. Click **Add Instructions** → paste the entire tutor system prompt
+4. In **Project Knowledge**, add a note: "My child's name is [NAME], age [AGE]."
+5. Start a conversation inside the project — the tutor is ready
+
+Repeat for each tutor. All your tutors will appear under Projects in your sidebar, just like ChatGPT's Custom GPTs.
+
+**Why some families prefer Claude:**
+- No subscription required for basic use — Claude has a generous free tier
+- Project Knowledge lets you add additional context (progress notes, specific topics to focus on)
+- Claude tends to be strong at open-ended writing, storytelling, and nuanced conversation
+
+**Why some families prefer ChatGPT:**
+- Custom GPTs have a dedicated link you can bookmark and share with your child
+- ChatGPT is the most widely used AI — more third-party resources available
+- GPT-4o has strong math reasoning for the Math Lab tutor
+
+**Bottom line:** Both work. Pick the one you already have access to, or try both and see which your child responds to better.
 
 ### Gemini
 

@@ -1,24 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import liveData from "@/data/dashboard.json";
 
-/* ─────────────────────────────────────────────
-   ZION'S DASHBOARD — His first business dashboard
-
-   Update the data below as revenue comes in.
-   All numbers are placeholders until first sales.
-   ───────────────────────────────────────────── */
-
-// ── UPDATE THESE NUMBERS AS REVENUE COMES IN ──
 const BUSINESS_DATA = {
-  totalRevenue: 0,        // Total gross revenue collected
-  totalExpenses: 0,       // Total business expenses paid
-  totalFamilies: 0,       // Number of families using the system
-  totalSessions: 0,       // Total tutoring sessions across all families
-  // Zion's contributions this month
-  tutorsTested: 7,        // Number of tutors he's tested
-  sessionsRecorded: 26,   // Proof videos recorded
-  feedbackGiven: 14,      // Thumbs up/down reviews given
+  totalRevenue: liveData.totalRevenue,
+  totalExpenses: liveData.totalExpenses,
+  totalFamilies: liveData.totalFamilies,
+  totalSessions: liveData.totalSessions,
+  // Zion's contributions — updated manually
+  tutorsTested: 7,
+  sessionsRecorded: 26,
+  feedbackGiven: 14,
 };
 
 // Calculated from the data

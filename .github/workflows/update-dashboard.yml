@@ -1,0 +1,63 @@
+name: Update Dashboard Data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Stripe revenue and customer count
+        id: stripe
+        env:
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+        run: |
+          REVENUE=$(curl -s -u "$STRIPE_SECRET_KEY:" \
+            "https://api.stripe.com/v1/charges?limit=100&status=succeeded" \
+            | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          total = sum(c['amount'] for c in data.get('data', []) if c.get('paid') and not c.get('refunded'))
+          print(total // 100)
+          ")
+
+          FAMILIES=$(curl -s -u "$STRIPE_SECRET_KEY:" \
+            "https://api.stripe.com/v1/customers?limit=1" \
+            | python3 -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          print(len(data.get('data', [])))
+          ")
+
+          echo "revenue=$REVENUE" >> $GITHUB_OUTPUT
+          echo "families=$FAMILIES" >> $GITHUB_OUTPUT
+
+      - name: Write dashboard.json
+        run: |
+          python3 -c "
+          import json, os
+          data = {
+            'totalRevenue': int(os.environ.get('REVENUE', 0)),
+            'totalExpenses': 0,
+            'totalFamilies': int(os.environ.get('FAMILIES', 0)),
+            'totalSessions': 0,
+            'lastUpdated': '$(date -u +%Y-%m-%dT%H:%M:%SZ)'
+          }
+          with open('data/dashboard.json', 'w') as f:
+            json.dump(data, f, indent=2)
+          " REVENUE=${{ steps.stripe.outputs.revenue }} FAMILIES=${{ steps.stripe.outputs.families }}
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/dashboard.json
+          git diff --cached --quiet || git commit -m "chore: update dashboard data [skip ci]"
+          git push
